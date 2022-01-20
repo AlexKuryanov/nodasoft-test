@@ -1,0 +1,174 @@
+html {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+h1,
+h2 {
+  display: none;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: #c0dbd9;
+}
+
+.header {
+  min-height: 100px;
+  background: #7faff7;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.popup-btn {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-decoration: none;
+  color: #fff;
+  background: #a5c7f9;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.section1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #b3f95a;
+  counter-reset: test;
+  margin-bottom: 15px;
+}
+
+.block {
+  min-width: 160px;
+  min-height: 198px;
+  background: #8ad191;
+}
+
+.block1 {
+  width: 390px;
+}
+
+.block2 {
+  width: 590px;
+}
+
+.block4 {
+  width: 995px;
+}
+
+.section1 .block::before {
+  display: block;
+  counter-increment: test;
+  content: counter(test);
+  font-size: 53px;
+  line-height: 62px;
+  color: #fff;
+  position: relative;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.section2 {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  justify-content: space-between;
+  background: #88b5bf;
+  padding: 30px 30px;
+  margin-bottom: 100px;
+}
+
+.box {
+  width: 255px;
+  height: auto;
+  max-height: 199px;
+  background: #0d89b0;
+  aspect-ratio: 6/5;
+}
+
+.footer {
+  min-height: 100px;
+  background: #7faff7;
+}
+
+/* Pop up */
+.overlay {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay:target {
+  opacity: 1;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #fff;
+  text-decoration: none;
+  background: #7faff6;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.popup {
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.popup p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 53px;
+  line-height: 62px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
